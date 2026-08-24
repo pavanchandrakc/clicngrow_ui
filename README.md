@@ -3,11 +3,8 @@
 Static, fully hardcoded conversion of the existing `index.html` into a React + Vite project using **shadcn/ui** primitives (for the button/nav shell) and **lucide-react** (for iconography where emojis are replaced/augmented). No backend, no API calls, no dynamic data — every string, link, and animation is hardcoded exactly as in the source HTML.
 
 This README is written so an IDE agent can implement the project end-to-end without further clarification. Follow it top to bottom.
-
 ---
-
 ## 1. Stack
-
 - **Vite** (`react-ts` template)
 - **React 18**
 - **Tailwind CSS** (v3) — used instead of the raw `<style>` blocks, but must reproduce every visual rule 1:1
@@ -24,8 +21,6 @@ This README is written so an IDE agent can implement the project end-to-end with
 npm create vite@latest clickngro-frontend -- --template react-ts
 cd clickngro-frontend
 npm install
-
-# Tailwind
 npm install -D tailwindcss postcss autoprefixer
 npx tailwindcss init -p
 
@@ -44,8 +39,6 @@ During `shadcn init`, choose:
 - Style: **Default**
 - Base color: **Slate**
 - CSS variables: **Yes**
-
----
 
 ## 3. Design tokens (extract into `tailwind.config.js` + `:root` CSS vars)
 

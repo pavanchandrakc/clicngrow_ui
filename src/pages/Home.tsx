@@ -7,7 +7,7 @@ import { Footer } from '../components/Footer'
 
 export const Home: React.FC = () => {
   return (
-    <div className="min-h-screen flex flex-col justify-between">
+    <div className="relative min-h-screen overflow-x-hidden noise-overlay bg-[#f8fafc] text-slate-900 flex flex-col justify-between">
       <div>
         <Navbar />
         <main>

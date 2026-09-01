@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { ArrowRight } from 'lucide-react'
+import { Badge } from './ui/badge'
+import { Button } from './ui/button'
 
 export interface CardProps {
   title: string
@@ -22,28 +24,28 @@ export const Card: React.FC<CardProps> = ({
   colSpan = 'col-span-1',
 }) => {
   const CardContent = (
-    <div className={`group relative w-full h-full rounded-[24px] p-6 bento-card flex flex-col justify-between cursor-pointer ${colSpan}`}>
+    <div className={`group relative w-full h-full rounded-2xl p-6 bg-white border border-blue-100/90 shadow-sm shadow-blue-500/5 hover:shadow-md hover:shadow-blue-500/10 hover:border-blue-300 transition-all duration-300 flex flex-col justify-between cursor-pointer ${colSpan}`}>
       {/* Scene Upper Visual Block */}
       <div className="w-full mb-5">{scene}</div>
 
       {/* Info Lower Content Block */}
-      <div className="flex flex-col gap-2">
+      <div className="flex flex-col gap-3">
         <div className="flex items-center justify-between">
-          <h3 className="text-xl font-bold text-slate-100 group-hover:text-cyan-300 transition-colors">
+          <h3 className="text-xl font-display font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
             {title}
           </h3>
-          <span className="px-2.5 py-0.5 rounded-full text-[10px] font-semibold bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 uppercase tracking-wider">
-            {pillLabel}
-          </span>
+          <Badge variant="secondary">{pillLabel}</Badge>
         </div>
 
-        <p className="text-sm text-slate-400 leading-relaxed">
+        <p className="text-sm text-slate-600 leading-relaxed">
           {description}
         </p>
 
-        <div className="pt-2 flex items-center gap-1.5 text-xs text-slate-400 group-hover:text-cyan-400 transition-colors font-medium">
-          <span>{hint}</span>
-          <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+        <div className="pt-1">
+          <Button size="sm" className="gap-2">
+            <span>{hint}</span>
+            <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+          </Button>
         </div>
       </div>
     </div>
@@ -55,3 +57,4 @@ export const Card: React.FC<CardProps> = ({
 
   return <div className={`h-full ${colSpan}`}>{CardContent}</div>
 }
+
